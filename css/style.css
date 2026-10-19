@@ -1,6 +1,6 @@
 /* =========================================================
-   KORAY — Tropical Premium Design System
-   Custom styles complementing Tailwind utilities
+   KORAY — Tropical Premium Design System (complete)
+   Custom styles complementing Tailwind utilities via CDN
    ========================================================= */
 
 /* ---------- CSS Custom Properties (theme tokens) ---------- */
@@ -386,7 +386,7 @@ html[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator {
 .toast.warn { border-left-color: var(--koray-sun); }
 .toast.error { border-left-color: #F87171; }
 
-/* ---------- Toast & nav styles ---------- */
+/* ---------- Nav links ---------- */
 .koray-nav-link {
   position: relative;
   font-size: .87rem;
@@ -435,7 +435,7 @@ html[data-theme="light"] .hero-backdrop::after {
   background-image: radial-gradient(rgba(51,65,85,.13) 1px, transparent 1px);
 }
 
-/* ---------- Scrollbar nav ---------- */
+/* ---------- Scrollbar ---------- */
 .nav-scroll::-webkit-scrollbar { height: 0; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -475,3 +475,64 @@ html[data-theme="light"] .glass { background: rgba(255,255,255,.72); border-colo
   transition: all .2s ease;
 }
 .lang-btn.active { background: var(--koray-turquoise); color: #062a27; border-color: var(--koray-turquoise); }
+
+/* ---------- NEW COMPONENTS (Sprint 5 & 6) ---------- */
+
+/* --- Venue portal slot form --- */
+.venue-slot-form { background: var(--koray-surface); border: 1px solid var(--koray-surface-2); border-radius: var(--koray-radius-xl); padding: 1.5rem; }
+.venue-slot-form .form-label { font-size: .85rem; color: var(--koray-text-2); margin-bottom: .4rem; display: block; }
+.venue-slot-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.venue-slot-form .form-row .full { grid-column: span 2; }
+.venue-slot-form .form-row .half { grid-column: auto; }
+.venue-slot-form .form-row .label-small { font-size: .72rem; color: var(--koray-muted); }
+.venue-slot-form .form-row input,
+.venue-slot-form .form-row select,
+.venue-slot-form .form-row input[type="number"],
+.venue-slot-form .form-row input[type="time"] { width: 100%; }
+
+/* --- Rate floor badge --- */
+.rate-floor-badge {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .65rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .15rem .4rem; border-radius: 999px;
+  background: rgba(255,107,107,.14); color: #FF8F8F;
+}
+
+/* --- Wallet pill --- */
+.credit-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-weight: 600; color: var(--koray-text);
+  background: rgba(255,107,107,.14); border: 1px solid rgba(255,107,107,.3); border-radius: 999px;
+  padding: .35rem .65rem;
+}
+.credit-pill .sub { font-size: .72rem; color: var(--koray-muted); text-transform: uppercase; letter-spacing: .05em; }
+
+/* --- Booking summary card --- */
+.booking-summary { background: var(--koray-surface); border: 1px solid var(--koray-surface-2); border-radius: var(--koray-radius-xl); padding: 1rem; }
+.booking-summary .price-row { display: flex; justify-content: space-between; margin: .4rem 0; font-size: .87rem; }
+.booking-summary .price-row .label { color: var(--koray-text-2); }
+.booking-summary .price-row .value { color: var(--koray-coral); font-weight: 600; }
+
+/* --- B2B cards --- */
+.b2b-card {
+  background: var(--koray-surface);
+  border: 1px solid var(--koray-surface-2);
+  border-radius: var(--koray-radius-xl);
+  padding: 1.5rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.b2b-card:hover { transform: translateY(-2px); box-shadow: var(--koray-shadow-soft-lg); }
+
+/* --- Table (partner list, billing, etc) --- */
+.tbl { width: 100%; border-collapse: collapse; }
+.tbl th, .tbl td { padding: .6rem .9rem; border-bottom: 1px solid var(--koray-surface-2); }
+.tbl th { color: var(--koray-text-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; }
+.tbl tr:hover td { background: var(--koray-surface-2); }
+
+/* --- Toast exit button (small) --- */
+.toast .btn-close { position: absolute; right: .75rem; top: .5rem; opacity: .6; transition: opacity .2s; }
+.toast .btn-close:hover { opacity: 1; }
+
+/* --- Price recommendation chip --- */
+.price-recommend { display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;color:#fff;background:linear-gradient(120deg,#FF6B6B,#E65A5A);padding:.2rem .5rem;border-radius:6px;margin-left:.4rem; }
