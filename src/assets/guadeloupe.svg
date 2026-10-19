@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" width="100%" height="auto" aria-label="Carte de la Guadeloupe" role="img">
+  <title>Carte de la Guadeloupe</title>
+  <defs>
+    <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FF6B6B" stop-opacity="0.75"/>
+    </linearGradient>
+    <filter id="islandShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="0" dy="4" result="offsetBlur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Basse-Terre -->
+  <path id="zone-basse-terre"
+        d="M 70 60 C 120 20, 210 30, 250 90 C 280 135, 230 175, 170 168 C 120 162, 78 130, 70 60 Z"
+        fill="url(#mapGradient)" filter="url(#islandShadow)" class="map-zone transition-all duration-300 hover:fill-secondary-400 cursor-pointer"/>
+  <!-- Grande-Terre -->
+  <path id="zone-grande-terre"
+        d="M 262 78 C 300 40, 380 30, 430 58 C 470 80, 468 120, 430 140 C 380 166, 300 160, 268 128 C 250 108, 248 92, 262 78 Z"
+        fill="url(#mapGradient)" filter="url(#islandShadow)" class="map-zone transition-all duration-300 hover:fill-secondary-400 cursor-pointer"/>
+  <!-- Marie-Galante -->
+  <path id="zone-marie-galante"
+        d="M 300 186 C 330 172, 372 174, 388 194 C 402 212, 384 232, 350 230 C 318 228, 292 206, 300 186 Z"
+        fill="url(#mapGradient)" filter="url(#islandShadow)" class="map-zone transition-all duration-300 hover:fill-secondary-400 cursor-pointer"/>
+  <!-- Les Saintes -->
+  <path id="zone-les-saintes"
+        d="M 118 196 C 138 184, 166 188, 172 204 C 178 220, 158 234, 134 230 C 114 227, 106 204, 118 196 Z"
+        fill="url(#mapGradient)" filter="url(#islandShadow)" class="map-zone transition-all duration-300 hover:fill-secondary-400 cursor-pointer"/>
+
+  <!-- Zone labels (optional, can be toggled) -->
+  <g class="zone-labels font-sans text-xs font-bold text-slate-300 text-anchor-middle dominant-baseline-middle">
+    <text x="160" y="100">Basse-Terre</text>
+    <text x="344" y="100">Grande-Terre</text>
+    <text x="350" y="210">Marie-Galante</text>
+    <text x="144" y="216">Les Saintes</text>
+  </g>
+</svg>
